@@ -1,63 +1,73 @@
 # 📘 Product Feedback API Documentation
 
-Base URL: `https://REPLACE-THIS-WITH-YOUR-DEPLOYED-URL.onrender.com`
+Base URL: `https://localhost:3000/REPLACE-THIS-WITH-YOUR-DEPLOYED-URL.onrender.com`
 
 ## Overview
 
 | Resource         | Method | Endpoint                      | Description                              |
 |------------------|--------|-------------------------------|------------------------------------------|
-| `suggestions`    | GET    | /get-all-suggestions          | Write your description here              |
-| `suggestions`    | GET    | /get-suggestions-by-category  | Write your description here              |
-| `suggestions`    | POST   | /add-one-suggestion           | Write your description here              |
+| `suggestions`    | GET    | /get-all-suggestions          | This endpoint gets all suggestions from the database and returns them as a list.    |
+| `suggestions`    | GET    | /get-suggestions-by-category  | This endpoint gets suggestions based on a specific category like Features, Bug, or UI.             |
+| `suggestions`    | POST   | /add-one-suggestion           | This endpoint adds a new suggestion to the database.             |
 
 ---
 
 ### 🔹 GET `/get-all-suggestions`
 
-**Description:** Write your description here
+**Description:** This endpoint gets all suggestions from the database and returns them as a list.
 
 **Example Response:**
-
 ```
-Write the data returned by this endpoint. 
-Think about its data type (String, Object, Array of Objects, etc.)
-Use spaces/indents to format the data if it is an array or object. 
+[
+    {
+        "id": 1,
+        "title": "Add dark mode",
+        "description": "Users want a dark theme",
+        "category": "Feature"
+    },
+    {
+        "id": 2,
+        "title": "Fix image bug",
+        "description": "Images are not loading",
+        "category": "Bug"
+    }
+]
 ```
-
 ---
 
 ### 🔹 GET `/get-suggestions-by-category/:category`
 
-**Description:** Write your description here
+**Description:** This endpoint gets suggestions based on a specific category like Features, Bug, or UI.
 
 **Example Response:**
-
 ```
-Write the data returned by this endpoint. 
-Think about its data type (String, Object, Array of Objects, etc.)
-Use spaces/indents to format the data if it is an array or object. 
+[
+    {
+        "id": 1,
+        "title": "Add dark mode",
+        "description": "Users want a dark theme",
+        "category": "Feature" 
+    }
+]
 ```
-
 ---
 
 ### 🔹 POST `/add-one-suggestion`
 
-**Description:** Write your description here
-
+**Description:** This endpoint adds a new suggestion to the database.
+```
 **Example Request Body:**
-
-```
-Write the data required in the request body. 
-Think about its data type (String, Object, Array of Objects, etc.)
-Use spaces/indents to format the data if it is an array or object. 
-```
+{
+    "title": "New idea",
+    "description": "Some description",
+    "category": "feature"
+}
 
 **Example Response:**
 
-```
-Write the data returned by this endpoint. 
-Think about its data type (String, Object, Array of Objects, etc.)
-Use spaces/indents to format the data if it is an array or object. 
+{
+    "message": "Suggestion added successfully"
+}
 ```
 ---
 
