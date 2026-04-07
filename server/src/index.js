@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
     res.send("Server is running");
 });
 // GET ALL..
-app.get("/get-all-suggestions", async (req, res) => {
+app.get("/api/get-all-suggestions", async (req, res) => {
     try {
         const result = await pool.query("SELECT * FROM suggestions");  //gets all data from database
         res.json(result.rows);  //sends back data..
@@ -34,7 +34,7 @@ app.get("/get-all-suggestions", async (req, res) => {
     }
 });
 // GET BY CATEGORY..
-app.get("/get-suggestions-by-category/:category", async (req, res) => {
+app.get("/api/get-suggestions-by-category/:category", async (req, res) => {
     try {
         const { category } = req.params;  //get category from URL..
         // get only matching category from database..
@@ -49,7 +49,7 @@ app.get("/get-suggestions-by-category/:category", async (req, res) => {
     }
 });
 // POST..
-app.post("/add-one-suggestion", async (req, res) => {
+app.post("/api/add-one-suggestion", async (req, res) => {
     try {
         const { title, description, category } = req.body;  //gets data from postman body..
         // this inserts new data into database..
