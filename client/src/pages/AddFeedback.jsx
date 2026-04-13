@@ -1,34 +1,62 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function AddFeeback() {
     const [title, setTitle] = useState("");
     const [category, setCategory] = useState("Feature");
     const [description, setDescription] = useState("");
+    const [error, setError] = useState(false);
 
-    const handleSubmit = (e) => {
+    const navigate = useNavigate();
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        console.log({
-            title,
-            category,
-            description,
-        });
+        if (!description || description.trim() === "") {
+            setError(true);
+            return;
+        }
+        setError(false);
 
-        setTitle("");
-        setCategory("Feature");
-        setDescription("");
+        await fetch("/api/add-one-suggestion", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                title,
+                category,
+                description,
+            }),
+        });
+        navigate("/");
+
+      
     };
 
+     
     return (
-        <div>
-            <h1>Create New Feedback</h1>
+    
+        <div className="add-container">
+            <div className="back-row"> 
+            <button className="back-btn" onClick={() => navigate("/")}>
+                ← Go Back
+            </button>
+</div>
+
+            <div className="form-card">  
+                <div className="icon-circle">
+                    +
+                </div>    
+        
+        <h2>Create New Feedback</h2>
 
             <form onSubmit={handleSubmit}>
                 <h4>Feedback Title</h4>
                 <p>Add a short, descriptive headline</p>
                 <input
                     value={title}
-                    onChange={(e) => setCategory(e.target.value)} />
+                    onChange={(e) => setTitle(e.target.value)} />
                 
                 <h4>Category</h4>
                 <p>Choose a category for your feedback</p>
@@ -36,20 +64,27 @@ function AddFeeback() {
                     onChange={(e) => setCategory(e.target.value)}
                 >
                     <option>Feature</option>
-                    <option>UI</option>
+                        <option>UI</option>
+                        <option>UX</option>
+                        <option>Enhancement</option>
                     <option>Bug</option>
                 </select>
                 <h4>Feedback Detail</h4>
                 <p>Include any specific comments on what should be improved, added, ect.</p>
-                <textarea
+                    <textarea
+                        className={error ? "error" : ""}
                     value={description}
-                    onChange={(e) => setDescription(e.target.value)} />
+                        onChange={(e) => setDescription(e.target.value)} />
+                    {error && <p className="error-text">Can't be empty</p>}
                 <br />
-                <br />
-                <button type="button">Cancel</button>
+                    <br />
+                    <div className="btn-row"> 
+            <button type="button" onClick={() => navigate("/")}>
+                Cancel</button>
                 <button type="submit">Submit Feedback</button>
-
+</div>
             </form>
+        </div>
         </div>
     );
 }
