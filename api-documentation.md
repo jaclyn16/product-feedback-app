@@ -1,6 +1,6 @@
 # 📘 Product Feedback API Documentation
 
-Base URL: `https://localhost:3000/REPLACE-THIS-WITH-YOUR-DEPLOYED-URL.onrender.com`
+Base URL: `https://product-feedback-app-7kxc.onrender.com`
 
 ## Overview
 
