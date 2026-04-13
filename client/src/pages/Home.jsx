@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import SuggestionCard from '../components/SuggestionCard.jsx';
 import { useNavigate } from 'react-router-dom';
-import emptyImg from "../assets/hero.png";
+import suggestionsIcon from "../assets/suggestions/icon-suggestions.svg";
+import emptyImg from "../assets/suggestions/illustration-empty.svg";
 
 
 
@@ -60,7 +61,7 @@ function Home() {
       <div className="main">
 <div className="top-bar">
           <h3 className="suggestions-title">
-            <span className="bulb">💡</span>
+            <img src={suggestionsIcon} alt="suggestions icon" className="bulb"/> 
             {suggestions.length} Suggestions</h3>
           <button className="add-btn" onClick={() => navigate("/add-feedback")}>
             + Add Feedback</button>

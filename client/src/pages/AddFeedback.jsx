@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import arrowLeft from "../assets/icons/icon-arrow-left.svg";
 
 function AddFeeback() {
     const [title, setTitle] = useState("");
@@ -39,8 +40,9 @@ function AddFeeback() {
     
         <div className="add-container">
             <div className="back-row"> 
-            <button className="back-btn" onClick={() => navigate("/")}>
-                ← Go Back
+                <button className="back-btn" onClick={() => navigate("/")}>
+                    <img src={arrowLeft} alt="back" className="back-icon"/>
+                Go Back
             </button>
 </div>
 

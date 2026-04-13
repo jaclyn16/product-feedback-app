@@ -221,6 +221,13 @@ textarea.error {
     color: grey;
     font-weight: 600;
     cursor: pointer;
+    gap: 8px;
+}
+
+.back-icon {
+    
+    width: 8px;
+    gap: 30px;
 }
 
 .icon-circle {
