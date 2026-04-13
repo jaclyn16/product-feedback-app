@@ -3,7 +3,7 @@ import express from "express";
 // this import...imports pg to let us talk to the PostgreSQL database
 import pkg from "pg";
 // this import, imports database connection info..
-import config from "./config.js";
+// import config from "./config.js";
 
 // get POOL from pg/used to connect to database
 // Pool=manages the connection between server and database..
