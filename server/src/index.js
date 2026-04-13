@@ -10,7 +10,8 @@ import config from "./config.js";
 const { Pool } = pkg;
 // this creates a connection to database using NEON URL..
 const pool = new Pool({
-    connectionString: config.databaseUrl,
+    connectionString: process.env.DATABASE_URL,
+     ssl: true, 
 });
 
 // this creates the server..
