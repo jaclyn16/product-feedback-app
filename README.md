@@ -9,6 +9,10 @@ This project is a full stack product feedback app where users can view feedback 
 Here's the link to view the live app: https://product-feedback-app16.netlify.app/
 
 ## 🖼️ Screenshots
+<img width="1216" height="698" alt="Screenshot 2026-04-14 at 1 35 47 PM" src="https://github.com/user-attachments/assets/e23e8ad9-8d92-4cfd-818e-d1f9edf8f3ba" />
+
+<img width="711" height="468" alt="Screenshot 2026-04-14 at 1 38 23 PM" src="https://github.com/user-attachments/assets/a10337f9-bb6d-4b9e-aae9-cffaf53a732d" />
+
 
 
 
