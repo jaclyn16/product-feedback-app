@@ -13,6 +13,7 @@ Here's the link to view the live app: https://product-feedback-app16.netlify.app
 
 <img width="711" height="468" alt="Screenshot 2026-04-14 at 1 38 23 PM" src="https://github.com/user-attachments/assets/a10337f9-bb6d-4b9e-aae9-cffaf53a732d" />
 
+<img width="750" height="672" alt="Screenshot 2026-04-14 at 1 59 11 PM" src="https://github.com/user-attachments/assets/c6acaf56-6ba4-47dc-afd3-690e8edf14fb" />
 
 
 
